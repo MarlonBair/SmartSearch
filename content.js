@@ -43,11 +43,6 @@ function traverseAndHighlight(node, regex) {
             }
         }
     } else if (node.nodeType === Node.ELEMENT_NODE) {
-        // Skip highlighting for input and textarea elements
-        // if (node.tagName.toLowerCase() === 'input' || node.tagName.toLowerCase() === 'textarea') {
-        //     return;
-        // }
-
         // Traverse child nodes
         for (let child of Array.from(node.childNodes)) {
             traverseAndHighlight(child, regex);
