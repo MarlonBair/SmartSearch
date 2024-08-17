@@ -43,26 +43,10 @@ function traverseAndHighlight(node, regex) {
             }
         }
     } else if (node.nodeType === Node.ELEMENT_NODE) {
-        // Check for input values
-        if (node.tagName.toLowerCase() === 'input' || node.tagName.toLowerCase() === 'textarea') {
-            const value = node.value;
-            if (value) {
-                const matches = value.match(regex);
-                if (matches) {
-                    node.style.backgroundColor = 'rgba(255, 255, 0, 0.7)'; 
-                    node.style.color = 'black';
-                } else {
-                    node.style.backgroundColor = '';
-                    node.style.color = '';
-                }
-            }
-        }
-
-        // Check for aria-label
-        const ariaLabel = node.getAttribute('aria-label');
-        if (ariaLabel && regex.test(ariaLabel)) {
-            node.style.backgroundColor = 'rgba(255, 255, 0, 0.7)'; // Highlight the element
-        }
+        // Skip highlighting for input and textarea elements
+        // if (node.tagName.toLowerCase() === 'input' || node.tagName.toLowerCase() === 'textarea') {
+        //     return;
+        // }
 
         // Traverse child nodes
         for (let child of Array.from(node.childNodes)) {
