@@ -6,16 +6,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="settingsIcon">
+        <img src="icons/settings.png" alt="Settings" width="24" height="24">
+    </div>
     <h1>SmartSearch</h1>
-    <div>
+    <div class="selector">
         <label for="searchMode">Search Mode:</label>
         <select id="searchMode">
             <option value="plain">Plain Text</option>
             <option value="regex">Regex</option>
+            <option value="ai">AI</option>
         </select>
     </div>
     <div>
-        <input type="text" id="regexInput" placeholder="Enter your search pattern">
+        <input class="input" type="text" id="regexInput" placeholder="Enter your search pattern" disabled>
         <button id="searchButton">Search</button>
         <button id="clearButton">Clear</button>
     </div>
